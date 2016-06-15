@@ -7,7 +7,7 @@ import java.util.List;
  */
 public class ChangeCombination {
 
-    public int function(int amount, List<Integer> coins) {
+    public int calculate(int amount, List<Integer> coins) {
 
         if (amount == 0) {
             return 1;
@@ -18,6 +18,6 @@ public class ChangeCombination {
         }
 
         final List<Integer> tail = coins.subList(1, coins.size());
-        return function(amount - coins.get(0), coins) + function(amount, tail);
+        return calculate(amount - coins.get(0), coins) + calculate(amount, tail);
     }
 }
